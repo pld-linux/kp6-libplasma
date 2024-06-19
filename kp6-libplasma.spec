@@ -4,19 +4,19 @@
 # TODO:
 #  * dbusmenu-qt5 , Support for notification area menus via the DBusMenu protocol , <https://launchpad.net/libdbusmenu-qt>
 #
-%define		kdeplasmaver	6.0.5
+%define		kdeplasmaver	6.1.0
 %define		qtver		5.15.2
 %define		kf6ver		5.102.0
 %define		kpname		libplasma
 
 Summary:	KDE libplasma
 Name:		kp6-%{kpname}
-Version:	6.0.5
+Version:	6.1.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	8c4ce38506ec355a77d3c2cef61d6b5b
+# Source0-md5:	e81bbe8be1b4356e064ed9abd4d94294
 URL:		http://www.kde.org/
 BuildRequires:	AppStream-qt6-devel >= 1.0
 BuildRequires:	Qt6Concurrent-devel >= %{qtver}
@@ -54,6 +54,7 @@ BuildRequires:	kf6-ki18n-devel >= %{kf6ver}
 BuildRequires:	kf6-kiconthemes-devel >= %{kf6ver}
 BuildRequires:	kf6-kidletime-devel >= %{kf6ver}
 BuildRequires:	kf6-kio-devel >= %{kf6ver}
+BuildRequires:	kf6-kirigami-devel >= %{kf6ver}
 BuildRequires:	kf6-kitemmodels-devel >= %{kf6ver}
 BuildRequires:	kf6-knewstuff-devel >= %{kf6ver}
 BuildRequires:	kf6-knotifications-devel >= %{kf6ver}
@@ -68,7 +69,6 @@ BuildRequires:	kf6-kunitconversion-devel >= %{kf6ver}
 BuildRequires:	kf6-kwallet-devel >= %{kf6ver}
 BuildRequires:	kf6-networkmanager-qt-devel >= %{kf6ver}
 BuildRequires:	kf6-prison-devel >= %{kf6ver}
-BuildRequires:	kf6-kirigami-devel >= %{kf6ver}
 BuildRequires:	kp6-plasma-activities-devel >= %{version}
 BuildRequires:	kuserfeedback-devel
 BuildRequires:	libdrm-devel
@@ -99,6 +99,7 @@ BuildRequires:	xorg-lib-libxkbcommon-devel
 BuildRequires:	xz
 BuildRequires:	zlib-devel
 Requires:	kp6-libplasma-data = %{version}-%{release}
+Obsoletes:	kp5-%{kpname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		qt6dir		%{_libdir}/qt6
@@ -110,6 +111,7 @@ KDE libplasma.
 Summary:	Data files for %{kpname}
 Summary(pl.UTF-8):	Dane dla %{kpname}
 Group:		X11/Applications
+Obsoletes:	kp5-%{kpname}-data < %{version}
 BuildArch:	noarch
 
 %description data
@@ -123,6 +125,7 @@ Summary:	Header files for %{kpname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kpname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Obsoletes:	kp5-%{kpname}-devel < %{version}
 
 %description devel
 Header files for %{kpname} development.
@@ -264,7 +267,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/plasma/extras/plasmaextracomponentsplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/plasma/extras/private/BackgroundMetrics.qml
 %{_libdir}/qt6/qml/org/kde/plasma/extras/qmldir
-
+%{_libdir}/qt6/qml/org/kde/plasma/extras/ListSectionHeader.qml
 
 %files data -f %{kpname}6.lang
 %defattr(644,root,root,755)
