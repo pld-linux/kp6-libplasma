@@ -4,19 +4,19 @@
 # TODO:
 #  * dbusmenu-qt5 , Support for notification area menus via the DBusMenu protocol , <https://launchpad.net/libdbusmenu-qt>
 #
-%define		kdeplasmaver	6.1.0
+%define		kdeplasmaver	6.1.1
 %define		qtver		5.15.2
 %define		kf6ver		5.102.0
 %define		kpname		libplasma
 
 Summary:	KDE libplasma
 Name:		kp6-%{kpname}
-Version:	6.1.0
+Version:	6.1.1
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	e81bbe8be1b4356e064ed9abd4d94294
+# Source0-md5:	0f0cc1c100fddc3710c9f2c90920d32b
 URL:		http://www.kde.org/
 BuildRequires:	AppStream-qt6-devel >= 1.0
 BuildRequires:	Qt6Concurrent-devel >= %{qtver}
