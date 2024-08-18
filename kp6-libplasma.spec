@@ -77,10 +77,10 @@ BuildRequires:	libqalculate-devel > 2.0
 BuildRequires:	libstdc++-devel >= 6:5
 BuildRequires:	libxcb-devel
 BuildRequires:	ninja
-BuildRequires:	phonon-qt5-devel >= 4.6.60
+BuildRequires:	phonon-qt6-devel >= 4.6.60
 BuildRequires:	pipewire-devel >= 0.3
 BuildRequires:	pkgconfig
-BuildRequires:	polkit-qt5-1-devel
+BuildRequires:	polkit-qt6-1-devel
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
