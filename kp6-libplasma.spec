@@ -4,19 +4,19 @@
 # TODO:
 #  * dbusmenu-qt5 , Support for notification area menus via the DBusMenu protocol , <https://launchpad.net/libdbusmenu-qt>
 #
-%define		kdeplasmaver	6.1.5
+%define		kdeplasmaver	6.2.0
 %define		qtver		5.15.2
 %define		kf6ver		5.102.0
 %define		kpname		libplasma
 
 Summary:	KDE libplasma
 Name:		kp6-%{kpname}
-Version:	6.1.5
+Version:	6.2.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	c9f743a9ce4ce010f6bfafdbc5ee87cd
+# Source0-md5:	790b44cedb04295e78605886cb692f17
 URL:		http://www.kde.org/
 BuildRequires:	AppStream-qt6-devel >= 1.0
 BuildRequires:	Qt6Concurrent-devel >= %{qtver}
@@ -168,6 +168,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/libPlasmaQuick.so.*.*
 %ghost %{_libdir}/libPlasmaQuick.so.6
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kirigami/platform/KirigamiPlasmaStyle.so
+%dir %{_libdir}/qt6/plugins/kf6/packagestructure
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/packagestructure/plasma_applet.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/packagestructure/plasma_containmentactions.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/packagestructure/plasma_generic.so
@@ -175,7 +176,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/packagestructure/plasma_theme.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/packagestructure/plasma_wallpaper.so
 %{_libdir}/qt6/qml/org/kde/kirigami/styles/Plasma/AbstractApplicationHeader.qml
-%{_libdir}/qt6/qml/org/kde/kirigami/styles/Plasma/Icon.qml
+%dir %{_libdir}/qt6/qml/org/kde/plasma/components
 %{_libdir}/qt6/qml/org/kde/plasma/components/AbstractButton.qml
 %{_libdir}/qt6/qml/org/kde/plasma/components/BusyIndicator.qml
 %{_libdir}/qt6/qml/org/kde/plasma/components/Button.qml
@@ -223,11 +224,13 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/plasma/components/ToolTip.qml
 %{_libdir}/qt6/qml/org/kde/plasma/components/kde-qmlmodule.version
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/components/liborg_kde_plasmacomponents3.so
+%dir %{_libdir}/qt6/qml/org/kde/plasma/components/mobiletextselection
 %{_libdir}/qt6/qml/org/kde/plasma/components/mobiletextselection/MobileCursor.qml
 %{_libdir}/qt6/qml/org/kde/plasma/components/mobiletextselection/MobileTextActionsToolBar.qml
 %{_libdir}/qt6/qml/org/kde/plasma/components/mobiletextselection/MobileTextActionsToolBarImpl.qml
 %{_libdir}/qt6/qml/org/kde/plasma/components/mobiletextselection/qmldir
 %{_libdir}/qt6/qml/org/kde/plasma/components/org_kde_plasmacomponents3.qmltypes
+%dir %{_libdir}/qt6/qml/org/kde/plasma/components/private
 %{_libdir}/qt6/qml/org/kde/plasma/components/private/ButtonBackground.qml
 %{_libdir}/qt6/qml/org/kde/plasma/components/private/ButtonContent.qml
 %{_libdir}/qt6/qml/org/kde/plasma/components/private/ButtonFocus.qml
@@ -240,10 +243,14 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/plasma/components/private/RoundShadow.qml
 %{_libdir}/qt6/qml/org/kde/plasma/components/private/TextFieldFocus.qml
 %{_libdir}/qt6/qml/org/kde/plasma/components/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/plasma/core
 %{_libdir}/qt6/qml/org/kde/plasma/core/corebindingsplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/plasma/core/kde-qmlmodule.version
 %attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/core/libcorebindingsplugin.so
 %{_libdir}/qt6/qml/org/kde/plasma/core/qmldir
+%{_libdir}/qt6/qml/org/kde/plasma/core/DefaultToolTip.qml
+%{_libdir}/qt6/qml/org/kde/plasma/core/DialogBackground.qml
+%dir %{_libdir}/qt6/qml/org/kde/plasma/extras
 %{_libdir}/qt6/qml/org/kde/plasma/extras/ActionTextField.qml
 %{_libdir}/qt6/qml/org/kde/plasma/extras/BasicPlasmoidHeading.qml
 %{_libdir}/qt6/qml/org/kde/plasma/extras/DescriptiveLabel.qml
@@ -258,6 +265,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/plasma/extras/Representation.qml
 %{_libdir}/qt6/qml/org/kde/plasma/extras/SearchField.qml
 %{_libdir}/qt6/qml/org/kde/plasma/extras/ShadowedLabel.qml
+%dir %{_libdir}/qt6/qml/org/kde/plasma/extras/animations
 %{_libdir}/qt6/qml/org/kde/plasma/extras/animations/ActivateAnimation.qml
 %{_libdir}/qt6/qml/org/kde/plasma/extras/animations/AppearAnimation.qml
 %{_libdir}/qt6/qml/org/kde/plasma/extras/animations/DisappearAnimation.qml
@@ -266,6 +274,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/plasma/extras/kde-qmlmodule.version
 %{_libdir}/qt6/qml/org/kde/plasma/extras/libplasmaextracomponentsplugin.so
 %{_libdir}/qt6/qml/org/kde/plasma/extras/plasmaextracomponentsplugin.qmltypes
+%dir %{_libdir}/qt6/qml/org/kde/plasma/extras/private
 %{_libdir}/qt6/qml/org/kde/plasma/extras/private/BackgroundMetrics.qml
 %{_libdir}/qt6/qml/org/kde/plasma/extras/qmldir
 %{_libdir}/qt6/qml/org/kde/plasma/extras/ListSectionHeader.qml
@@ -400,48 +409,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma/desktoptheme/default/widgets/tooltip.svgz
 %{_datadir}/plasma/desktoptheme/default/widgets/translucentbackground.svgz
 %{_datadir}/plasma/desktoptheme/default/widgets/viewitem.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/colors
-%{_datadir}/plasma/desktoptheme/oxygen/dialogs/background.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/metadata.json
-%{_datadir}/plasma/desktoptheme/oxygen/opaque/dialogs/background.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/opaque/dialogs/krunner.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/opaque/widgets/extender-background.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/opaque/widgets/panel-background.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/opaque/widgets/tooltip.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/plasmarc
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/action-overlays.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/actionbutton.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/analog_meter.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/arrows.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/background.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/bar_meter_horizontal.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/bar_meter_vertical.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/branding.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/busywidget.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/button.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/clock.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/containment-controls.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/dragger.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/extender-background.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/extender-dragger.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/frame.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/glowbar.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/line.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/lineedit.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/media-delegate.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/monitor.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/pager.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/panel-background.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/plot-background.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/scrollbar.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/scrollwidget.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/slider.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/tabbar.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/tasks.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/timer.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/tooltip.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/translucentbackground.svgz
-%{_datadir}/plasma/desktoptheme/oxygen/widgets/viewitem.svgz
 %{_datadir}/qlogging-categories6/plasma-framework.categories
 %{_datadir}/qlogging-categories6/plasma-framework.renamecategories
 
