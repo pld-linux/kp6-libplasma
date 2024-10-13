@@ -175,6 +175,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/packagestructure/plasma_shell.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/packagestructure/plasma_theme.so
 %attr(755,root,root) %{_libdir}/qt6/plugins/kf6/packagestructure/plasma_wallpaper.so
+%dir %{_libdir}/qt6/qml/org/kde/kirigami/styles/Plasma
 %{_libdir}/qt6/qml/org/kde/kirigami/styles/Plasma/AbstractApplicationHeader.qml
 %dir %{_libdir}/qt6/qml/org/kde/plasma/components
 %{_libdir}/qt6/qml/org/kde/plasma/components/AbstractButton.qml
@@ -281,13 +282,19 @@ rm -rf $RPM_BUILD_ROOT
 
 %files data -f %{kpname}6.lang
 %defattr(644,root,root,755)
+%dir %{_datadir}/plasma/desktoptheme
+%dir %{_datadir}/plasma/desktoptheme/breeze-dark
 %{_datadir}/plasma/desktoptheme/breeze-dark/colors
 %{_datadir}/plasma/desktoptheme/breeze-dark/metadata.json
 %{_datadir}/plasma/desktoptheme/breeze-dark/plasmarc
+%dir %{_datadir}/plasma/desktoptheme/breeze-light
 %{_datadir}/plasma/desktoptheme/breeze-light/colors
 %{_datadir}/plasma/desktoptheme/breeze-light/metadata.json
 %{_datadir}/plasma/desktoptheme/breeze-light/plasmarc
+%dir %{_datadir}/plasma/desktoptheme/default
+%dir %{_datadir}/plasma/desktoptheme/default/dialogs
 %{_datadir}/plasma/desktoptheme/default/dialogs/background.svgz
+%dir %{_datadir}/plasma/desktoptheme/default/icons
 %{_datadir}/plasma/desktoptheme/default/icons/akonadi.svgz
 %{_datadir}/plasma/desktoptheme/default/icons/akregator.svgz
 %{_datadir}/plasma/desktoptheme/default/icons/amarok.svgz
@@ -355,18 +362,28 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma/desktoptheme/default/icons/yakuake.svgz
 %{_datadir}/plasma/desktoptheme/default/icons/zoom.svgz
 %{_datadir}/plasma/desktoptheme/default/metadata.json
+%dir %{_datadir}/plasma/desktoptheme/default/opaque
+%dir %{_datadir}/plasma/desktoptheme/default/opaque/dialogs
 %{_datadir}/plasma/desktoptheme/default/opaque/dialogs/background.svgz
+%dir %{_datadir}/plasma/desktoptheme/default/opaque/widgets
 %{_datadir}/plasma/desktoptheme/default/opaque/widgets/panel-background.svgz
 %{_datadir}/plasma/desktoptheme/default/opaque/widgets/tooltip.svgz
 %{_datadir}/plasma/desktoptheme/default/plasmarc
+%dir %{_datadir}/plasma/desktoptheme/default/solid
+%dir %{_datadir}/plasma/desktoptheme/default/solid/dialogs
 %{_datadir}/plasma/desktoptheme/default/solid/dialogs/background.svgz
+%dir %{_datadir}/plasma/desktoptheme/default/solid/widgets
 %{_datadir}/plasma/desktoptheme/default/solid/widgets/background.svgz
 %{_datadir}/plasma/desktoptheme/default/solid/widgets/panel-background.svgz
 %{_datadir}/plasma/desktoptheme/default/solid/widgets/tooltip.svgz
+%dir %{_datadir}/plasma/desktoptheme/default/translucent
+%dir %{_datadir}/plasma/desktoptheme/default/translucent/dialogs
 %{_datadir}/plasma/desktoptheme/default/translucent/dialogs/background.svgz
+%dir %{_datadir}/plasma/desktoptheme/default/translucent/widgets
 %{_datadir}/plasma/desktoptheme/default/translucent/widgets/background.svgz
 %{_datadir}/plasma/desktoptheme/default/translucent/widgets/panel-background.svgz
 %{_datadir}/plasma/desktoptheme/default/translucent/widgets/tooltip.svgz
+%dir %{_datadir}/plasma/desktoptheme/default/widgets
 %{_datadir}/plasma/desktoptheme/default/widgets/action-overlays.svgz
 %{_datadir}/plasma/desktoptheme/default/widgets/actionbutton.svgz
 %{_datadir}/plasma/desktoptheme/default/widgets/analog_meter.svgz
