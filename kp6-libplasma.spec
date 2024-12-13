@@ -12,7 +12,7 @@
 Summary:	KDE libplasma
 Name:		kp6-%{kpname}
 Version:	6.2.4
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -126,6 +126,10 @@ Summary:	Header files for %{kpname} development
 Summary(pl.UTF-8):	Pliki nagłówkowe dla programistów używających %{kpname}
 Group:		X11/Development/Libraries
 Requires:	%{name} = %{version}-%{release}
+Requires:	Qt6Gui-devel >= %{qtver}
+Requires:	Qt6Qml-devel >= %{qtver}
+Requires:	kf6-kpackage-devel >= %{kf6ver}
+Requires:	kf6-kwindowsystem-devel >= %{kf6ver}
 Obsoletes:	kp5-%{kpname}-devel < %{version}
 
 %description devel
