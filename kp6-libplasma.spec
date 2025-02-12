@@ -4,19 +4,19 @@
 # TODO:
 #  * dbusmenu-qt5 , Support for notification area menus via the DBusMenu protocol , <https://launchpad.net/libdbusmenu-qt>
 #
-%define		kdeplasmaver	6.2.5
+%define		kdeplasmaver	6.3.0
 %define		qtver		5.15.2
 %define		kf6ver		5.102.0
 %define		kpname		libplasma
 
 Summary:	KDE libplasma
 Name:		kp6-%{kpname}
-Version:	6.2.5
+Version:	6.3.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	d18e133cf766e559e6158cba184749f2
+# Source0-md5:	00f47de6a35b0c26224463fd6c9baedc
 URL:		http://www.kde.org/
 BuildRequires:	AppStream-qt6-devel >= 1.0
 BuildRequires:	Qt6Concurrent-devel >= %{qtver}
@@ -79,8 +79,8 @@ BuildRequires:	libxcb-devel
 BuildRequires:	ninja
 BuildRequires:	phonon-qt6-devel >= 4.6.60
 BuildRequires:	pipewire-devel >= 0.3
-BuildRequires:	plasma-wayland-protocols-devel >= 1.6
 BuildRequires:	pkgconfig
+BuildRequires:	plasma-wayland-protocols-devel >= 1.6
 BuildRequires:	polkit-qt6-1-devel
 BuildRequires:	rpm-build >= 4.6
 BuildRequires:	rpmbuild(macros) >= 1.736
@@ -216,6 +216,7 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/plasma/components/ScrollView.qml
 %{_libdir}/qt6/qml/org/kde/plasma/components/Slider.qml
 %{_libdir}/qt6/qml/org/kde/plasma/components/SpinBox.qml
+%{_libdir}/qt6/qml/org/kde/plasma/components/StackView.qml
 %{_libdir}/qt6/qml/org/kde/plasma/components/SwipeView.qml
 %{_libdir}/qt6/qml/org/kde/plasma/components/Switch.qml
 %{_libdir}/qt6/qml/org/kde/plasma/components/SwitchDelegate.qml
