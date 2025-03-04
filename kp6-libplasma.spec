@@ -12,7 +12,7 @@
 Summary:	KDE libplasma
 Name:		kp6-%{kpname}
 Version:	6.3.2
-Release:	1
+Release:	2
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
@@ -99,6 +99,7 @@ BuildRequires:	xorg-lib-libXtst-devel
 BuildRequires:	xorg-lib-libxkbcommon-devel
 BuildRequires:	xz
 BuildRequires:	zlib-devel
+BuildConflicts:	phonon-qt5
 Requires:	kp6-libplasma-data = %{version}-%{release}
 Obsoletes:	kp5-%{kpname} < %{version}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
