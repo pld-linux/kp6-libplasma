@@ -4,19 +4,19 @@
 # TODO:
 #  * dbusmenu-qt5 , Support for notification area menus via the DBusMenu protocol , <https://launchpad.net/libdbusmenu-qt>
 #
-%define		kdeplasmaver	6.3.4
+%define		kdeplasmaver	6.3.5
 %define		qtver		5.15.2
 %define		kf6ver		5.102.0
 %define		kpname		libplasma
 
 Summary:	KDE libplasma
 Name:		kp6-%{kpname}
-Version:	6.3.4
+Version:	6.3.5
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kdeplasmaver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	f42bcadb8a62a42c346b3376fd2981f1
+# Source0-md5:	2cd56cb43fa2b117426a21910823ee82
 URL:		http://www.kde.org/
 BuildRequires:	AppStream-qt6-devel >= 1.0
 BuildRequires:	Qt6Concurrent-devel >= %{qtver}
@@ -101,7 +101,7 @@ BuildRequires:	xz
 BuildRequires:	zlib-devel
 BuildConflicts:	phonon-qt5
 Requires:	kp6-libplasma-data = %{version}-%{release}
-Obsoletes:	kp5-%{kpname} < %{version}
+Obsoletes:	kp5-%{kpname} < 6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define		qt6dir		%{_libdir}/qt6
@@ -113,7 +113,7 @@ KDE libplasma.
 Summary:	Data files for %{kpname}
 Summary(pl.UTF-8):	Dane dla %{kpname}
 Group:		X11/Applications
-Obsoletes:	kp5-%{kpname}-data < %{version}
+Obsoletes:	kp5-%{kpname}-data < 6
 BuildArch:	noarch
 
 %description data
@@ -131,7 +131,7 @@ Requires:	Qt6Gui-devel >= %{qtver}
 Requires:	Qt6Qml-devel >= %{qtver}
 Requires:	kf6-kpackage-devel >= %{kf6ver}
 Requires:	kf6-kwindowsystem-devel >= %{kf6ver}
-Obsoletes:	kp5-%{kpname}-devel < %{version}
+Obsoletes:	kp5-%{kpname}-devel < 6
 
 %description devel
 Header files for %{kpname} development.
