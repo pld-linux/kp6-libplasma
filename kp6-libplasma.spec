@@ -1,15 +1,16 @@
-#
-# Conditional build:
-%bcond_with	tests		# build with tests
 # TODO:
 #  * dbusmenu-qt5 , Support for notification area menus via the DBusMenu protocol , <https://launchpad.net/libdbusmenu-qt>
 #
+# Conditional build:
+%bcond_with	tests		# test suite
+
 %define		kdeplasmaver	6.3.5
 %define		qtver		5.15.2
 %define		kf6ver		5.102.0
 %define		kpname		libplasma
 
-Summary:	KDE libplasma
+Summary:	Foundational libraries, components, and tools of the Plasma workspaces
+Summary(pl.UTF-8):	Podstawowe biblioteki, komponenty i narzędzia środowiska Plasma
 Name:		kp6-%{kpname}
 Version:	6.3.5
 Release:	1
@@ -104,10 +105,17 @@ Requires:	kp6-libplasma-data = %{version}-%{release}
 Obsoletes:	kp5-%{kpname} < 6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		qt6dir		%{_libdir}/qt6
-
 %description
-KDE libplasma.
+libplasma provides the following:
+- QML components that can be used by any Plasma shell
+- A C++ library: libplasma itself
+- Script engines
+
+%description -l pl.UTF-8
+libplasma obejmuje:
+- komponenty QML, które mogą być używane z powłoką Plasma
+- samą bibliotekę C++ libplasma
+- silniki skryptowe
 
 %package data
 Summary:	Data files for %{kpname}
@@ -148,6 +156,7 @@ Pliki nagłówkowe dla programistów używających %{kpname}.
 	%{!?with_tests:-DBUILD_TESTING=OFF} \
 	-DKDE_INSTALL_USE_QT_SYS_PATHS=ON \
 	-DKDE_INSTALL_DOCBUNDLEDIR=%{_kdedocdir}
+
 %ninja_build -C build
 
 %if %{with tests}
@@ -156,6 +165,7 @@ ctest
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %ninja_install -C build
 
 %find_lang %{kpname}6 --all-name --with-kde
@@ -163,8 +173,8 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post -p /sbin/ldconfig
-%postun -p /sbin/ldconfig
+%post	-p /sbin/ldconfig
+%postun	-p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
@@ -434,7 +444,6 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/plasma/desktoptheme/default/widgets/viewitem.svgz
 %{_datadir}/qlogging-categories6/plasma-framework.categories
 %{_datadir}/qlogging-categories6/plasma-framework.renamecategories
-
 
 %files devel
 %defattr(644,root,root,755)
