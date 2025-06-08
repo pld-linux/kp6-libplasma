@@ -105,6 +105,9 @@ libplasma obejmuje:
 Summary:	Data files for %{kpname}
 Summary(pl.UTF-8):	Dane dla %{kpname}
 Group:		X11/Applications
+Provides:	kf5-plasma-desktoptheme-breeze = %{version}-%{release}
+Obsoletes:	kf5-plasma-desktoptheme-breeze < 6
+Conflicts:	kf5-plasma-framework < 5.116.0-2
 BuildArch:	noarch
 
 %description data
