@@ -102,7 +102,6 @@ BuildRequires:	xz
 BuildRequires:	zlib-devel
 BuildConflicts:	phonon-qt5
 Requires:	kp6-libplasma-data = %{version}-%{release}
-Obsoletes:	kp5-%{kpname} < 6
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -121,7 +120,6 @@ libplasma obejmuje:
 Summary:	Data files for %{kpname}
 Summary(pl.UTF-8):	Dane dla %{kpname}
 Group:		X11/Applications
-Obsoletes:	kp5-%{kpname}-data < 6
 BuildArch:	noarch
 
 %description data
