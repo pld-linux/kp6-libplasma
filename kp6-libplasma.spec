@@ -10,12 +10,12 @@
 Summary:	Foundational libraries, components, and tools of the Plasma workspaces
 Summary(pl.UTF-8):	Podstawowe biblioteki, komponenty i narzędzia środowiska Plasma
 Name:		kp6-%{kpname}
-Version:	6.4.5
-Release:	2
+Version:	6.5.0
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kp_ver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	f1ec99806a74f041a0a30a6553499290
+# Source0-md5:	96fdd50badad00db75d941951753386a
 URL:		https://kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
@@ -168,24 +168,24 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%attr(755,root,root) %{_libdir}/libPlasma.so.*.*
+%{_libdir}/libPlasma.so.*.*
 %ghost %{_libdir}/libPlasma.so.6
-%attr(755,root,root) %{_libdir}/libPlasmaQuick.so.*.*
+%{_libdir}/libPlasmaQuick.so.*.*
 %ghost %{_libdir}/libPlasmaQuick.so.6
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/kirigami/platform/KirigamiPlasmaStyle.so
+%{_libdir}/qt6/plugins/kf6/kirigami/platform/KirigamiPlasmaStyle.so
 %dir %{_libdir}/qt6/plugins/kf6/packagestructure
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/packagestructure/plasma_applet.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/packagestructure/plasma_containmentactions.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/packagestructure/plasma_generic.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/packagestructure/plasma_shell.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/packagestructure/plasma_theme.so
-%attr(755,root,root) %{_libdir}/qt6/plugins/kf6/packagestructure/plasma_wallpaper.so
+%{_libdir}/qt6/plugins/kf6/packagestructure/plasma_applet.so
+%{_libdir}/qt6/plugins/kf6/packagestructure/plasma_containmentactions.so
+%{_libdir}/qt6/plugins/kf6/packagestructure/plasma_generic.so
+%{_libdir}/qt6/plugins/kf6/packagestructure/plasma_shell.so
+%{_libdir}/qt6/plugins/kf6/packagestructure/plasma_theme.so
+%{_libdir}/qt6/plugins/kf6/packagestructure/plasma_wallpaper.so
 %dir %{_libdir}/qt6/qml/org/kde/kirigami/styles/Plasma
 %{_libdir}/qt6/qml/org/kde/kirigami/styles/Plasma/AbstractApplicationHeader.qml
 %dir %{_libdir}/qt6/qml/org/kde/plasma/components
 %{_libdir}/qt6/qml/org/kde/plasma/components/*.qml
 %{_libdir}/qt6/qml/org/kde/plasma/components/kde-qmlmodule.version
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/components/liborg_kde_plasmacomponents3.so
+%{_libdir}/qt6/qml/org/kde/plasma/components/liborg_kde_plasmacomponents3.so
 %{_libdir}/qt6/qml/org/kde/plasma/components/mobiletextselection
 %{_libdir}/qt6/qml/org/kde/plasma/components/org_kde_plasmacomponents3.qmltypes
 %{_libdir}/qt6/qml/org/kde/plasma/components/private
@@ -194,16 +194,26 @@ rm -rf $RPM_BUILD_ROOT
 %{_libdir}/qt6/qml/org/kde/plasma/core/*.qml
 %{_libdir}/qt6/qml/org/kde/plasma/core/corebindingsplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/plasma/core/kde-qmlmodule.version
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/core/libcorebindingsplugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/core/libcorebindingsplugin.so
 %{_libdir}/qt6/qml/org/kde/plasma/core/qmldir
 %dir %{_libdir}/qt6/qml/org/kde/plasma/extras
 %{_libdir}/qt6/qml/org/kde/plasma/extras/*.qml
 %{_libdir}/qt6/qml/org/kde/plasma/extras/animations
 %{_libdir}/qt6/qml/org/kde/plasma/extras/kde-qmlmodule.version
-%attr(755,root,root) %{_libdir}/qt6/qml/org/kde/plasma/extras/libplasmaextracomponentsplugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/extras/libplasmaextracomponentsplugin.so
 %{_libdir}/qt6/qml/org/kde/plasma/extras/plasmaextracomponentsplugin.qmltypes
 %{_libdir}/qt6/qml/org/kde/plasma/extras/private
 %{_libdir}/qt6/qml/org/kde/plasma/extras/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/plasma/configuration
+%{_libdir}/qt6/qml/org/kde/plasma/configuration/kde-qmlmodule.version
+%{_libdir}/qt6/qml/org/kde/plasma/configuration/libplasmaconfigplugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/configuration/plasmaconfigplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/plasma/configuration/qmldir
+%dir %{_libdir}/qt6/qml/org/kde/plasma/plasmoid
+%{_libdir}/qt6/qml/org/kde/plasma/plasmoid/kde-qmlmodule.version
+%{_libdir}/qt6/qml/org/kde/plasma/plasmoid/libplasmoidplugin.so
+%{_libdir}/qt6/qml/org/kde/plasma/plasmoid/plasmoidplugin.qmltypes
+%{_libdir}/qt6/qml/org/kde/plasma/plasmoid/qmldir
 
 %files data -f %{kpname}6.lang
 %defattr(644,root,root,755)
@@ -226,4 +236,4 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/kdevappwizard/templates/plasma6-wallpaper.tar.bz2
 %{_datadir}/kdevappwizard/templates/plasma6-wallpaper-with-qml-extension.tar.bz2
 %{_datadir}/kdevappwizard/templates/qml-plasmoid6.tar.bz2
-%{_datadir}/kdevappwizard/templates/qml-plasmoid6-with-qml-extension.tar.bz2
+##%{_datadir}/kdevappwizard/templates/qml-plasmoid6-with-qml-extension.tar.bz2
