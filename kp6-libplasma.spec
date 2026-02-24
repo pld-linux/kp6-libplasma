@@ -10,12 +10,12 @@
 Summary:	Foundational libraries, components, and tools of the Plasma workspaces
 Summary(pl.UTF-8):	Podstawowe biblioteki, komponenty i narzędzia środowiska Plasma
 Name:		kp6-%{kpname}
-Version:	6.6.0
+Version:	6.6.1
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kp_ver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	f50fc349bd0e3fb56c6bea8403e4bc55
+# Source0-md5:	c812ac7dd42ec942ce06a4659d5ac69d
 URL:		https://kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
@@ -169,9 +169,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %{_libdir}/libPlasma.so.*.*
-%ghost %{_libdir}/libPlasma.so.6
+%ghost %{_libdir}/libPlasma.so.7
 %{_libdir}/libPlasmaQuick.so.*.*
-%ghost %{_libdir}/libPlasmaQuick.so.6
+%ghost %{_libdir}/libPlasmaQuick.so.7
 %{_libdir}/qt6/plugins/kf6/kirigami/platform/KirigamiPlasmaStyle.so
 %dir %{_libdir}/qt6/plugins/kf6/packagestructure
 %{_libdir}/qt6/plugins/kf6/packagestructure/plasma_applet.so
