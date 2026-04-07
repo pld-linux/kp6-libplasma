@@ -10,12 +10,12 @@
 Summary:	Foundational libraries, components, and tools of the Plasma workspaces
 Summary(pl.UTF-8):	Podstawowe biblioteki, komponenty i narzędzia środowiska Plasma
 Name:		kp6-%{kpname}
-Version:	6.6.3
-Release:	2
+Version:	6.6.4
+Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kp_ver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	4e21b07945da03636fd20f43a580fede
+# Source0-md5:	8954edefac48660653a1109d3db87e51
 URL:		https://kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
