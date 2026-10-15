@@ -10,12 +10,12 @@
 Summary:	Foundational libraries, components, and tools of the Plasma workspaces
 Summary(pl.UTF-8):	Podstawowe biblioteki, komponenty i narzędzia środowiska Plasma
 Name:		kp6-%{kpname}
-Version:	6.7.5
+Version:	6.8.0
 Release:	1
 License:	LGPL v2.1+
 Group:		X11/Libraries
 Source0:	https://download.kde.org/stable/plasma/%{kp_ver}/%{kpname}-%{version}.tar.xz
-# Source0-md5:	9af6700bbe874f503ccf5b9f1fd98655
+# Source0-md5:	350e7fbd6f7111adb2dfe67a13204831
 URL:		https://kde.org/
 BuildRequires:	EGL-devel
 BuildRequires:	OpenGL-devel
@@ -169,9 +169,9 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %{_libdir}/libPlasma.so.*.*
-%ghost %{_libdir}/libPlasma.so.7
+%ghost %{_libdir}/libPlasma.so.8
 %{_libdir}/libPlasmaQuick.so.*.*
-%ghost %{_libdir}/libPlasmaQuick.so.7
+%ghost %{_libdir}/libPlasmaQuick.so.8
 %{_libdir}/qt6/plugins/kf6/kirigami/platform/KirigamiPlasmaStyle.so
 %dir %{_libdir}/qt6/plugins/kf6/packagestructure
 %{_libdir}/qt6/plugins/kf6/packagestructure/plasma_applet.so
@@ -232,6 +232,8 @@ rm -rf $RPM_BUILD_ROOT
 %{_includedir}/PlasmaQuick
 %{_libdir}/cmake/Plasma
 %{_libdir}/cmake/PlasmaQuick
+%{_libdir}/qt6/metatypes/qt6plasma_metatypes.json
+%{_libdir}/qt6/metatypes/qt6plasmaquick_metatypes.json
 %{_datadir}/kdevappwizard/templates/cpp-plasmoid6.tar.bz2
 %{_datadir}/kdevappwizard/templates/plasma6-wallpaper.tar.bz2
 %{_datadir}/kdevappwizard/templates/plasma6-wallpaper-with-qml-extension.tar.bz2
